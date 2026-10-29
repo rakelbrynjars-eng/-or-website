@@ -1,0 +1,534 @@
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+background: #f7f5f0;
+color: #182c46;
+}
+
+/* Menu */
+nav {
+background: #182c46;
+padding: 20px;
+}
+
+nav ul {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 30px;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+display: block;
+padding: 8px;
+}
+
+nav a:hover {
+text-decoration: underline;
+}
+
+/* Aðalsvæði */
+.hero {
+width: 100%;
+max-width: 1150px;
+margin: 0 auto;
+padding: 70px 30px;
+display: grid;
+grid-template-columns: minmax(0, 1fr);
+align-items: center;
+gap: 40px;
+}
+
+.hero-text {
+width: 100%;
+min-width: 0;
+}
+
+.hero-text h1 {
+margin: 0 0 24px;
+font-size: clamp(28px, 4vw, 46px);
+line-height: 1.15;
+letter-spacing: -1px;
+}
+
+.hero-text p {
+width: 100%;
+max-width: 450px;
+margin: 0 0 30px;
+font-size: 18px;
+line-height: 1.7;
+color: #536173;
+}
+
+.hero-button {
+display: inline-block;
+width: auto;
+padding: 16px 24px;
+background: #182c46;
+color: white;
+border-radius: 6px;
+text-decoration: none;
+font-weight: bold;
+}
+
+.hero-button:hover {
+background: #2b496d;
+}
+
+.hero > img {
+display: block;
+width: 100%;
+max-width: 340px;
+height: auto;
+max-height: 440px;
+object-fit: contain;
+justify-self: center;
+}
+
+/* Tölva: texti vinstra megin, mynd hægra megin */
+@media screen and (min-width: 900px) {
+.hero {
+min-height: 75vh;
+grid-template-columns: minmax(0, 1fr) 340px;
+gap: 50px;
+}
+
+.hero-text h1 {
+white-space: nowrap;
+}
+}
+
+/* About síðan */
+.about-page {
+max-width: 1100px;
+margin: 0 auto;
+padding: 60px 24px;
+}
+
+.about-heading {
+text-align: center;
+margin-bottom: 60px;
+}
+
+.about-heading h1 {
+margin: 0 0 24px;
+font-size: clamp(38px, 5vw, 60px);
+letter-spacing: -1px;
+}
+
+.about-heading p {
+max-width: 650px;
+margin: 0 auto;
+font-size: 18px;
+line-height: 1.8;
+color: #536173;
+}
+
+/* Tveir dálkar á stærri skjá */
+.about-columns {
+display: grid;
+grid-template-columns: 1fr;
+gap: 36px;
+}
+
+.about-column {
+display: flex;
+flex-direction: column;
+}
+
+.about-column h2 {
+margin: 0 0 20px;
+font-size: 32px;
+}
+
+.about-box {
+flex: 1;
+padding: 30px;
+background-color: #eaecef;
+border-radius: 12px;
+}
+
+.about-box p {
+margin: 0;
+font-size: 17px;
+line-height: 1.8;
+color: #536173;
+}
+
+/* Mynd neðst */
+.about-photo {
+display: block;
+width: 100%;
+max-width: 380px;
+height: auto;
+max-height: 450px;
+object-fit: contain;
+margin: 60px auto 0;
+}
+
+@media screen and (min-width: 768px) {
+.about-columns {
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+}
+
+/* Footer */
+.site-footer {
+margin-top: 60px;
+padding: 36px 24px;
+background: #182c46;
+color: white;
+text-align: center;
+}
+
+.footer-name {
+margin: 0 0 20px;
+font-size: 22px;
+font-weight: bold;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 24px;
+}
+
+.footer-links a {
+color: white;
+text-decoration: none;
+}
+
+.footer-links a:hover {
+text-decoration: underline;
+}
+
+.footer-note {
+margin: 24px 0 0;
+font-size: 13px;
+color: #cbd5e1;
+}
+
+.contact-page {
+max-width: 1000px;
+margin: 80px auto;
+padding: 0 30px;
+}
+
+.contact-page h1 {
+font-size: 56px;
+margin: 0 0 35px;
+text-align: left;
+}
+
+.contact-columns {
+display: grid;
+grid-template-columns: 1fr 1.2fr;
+gap: 30px;
+align-items: start;
+}
+
+.contact-card {
+background: #eeeeee;
+padding: 35px;
+border-radius: 8px;
+}
+
+.contact-card h2 {
+font-size: 27px;
+margin: 0 0 20px;
+}
+
+.contact-card p {
+line-height: 1.7;
+margin-bottom: 20px;
+}
+
+.contact-card a {
+color: #284c7d;
+overflow-wrap: anywhere;
+}
+
+.contact-card form {
+display: flex;
+flex-direction: column;
+}
+
+.contact-card label {
+margin-bottom: 8px;
+}
+
+.contact-card input,
+.contact-card textarea {
+box-sizing: border-box;
+width: 100%;
+padding: 12px;
+margin-bottom: 20px;
+border: 1px solid #cccccc;
+border-radius: 4px;
+background: white;
+font: inherit;
+}
+
+.contact-card textarea {
+resize: vertical;
+}
+
+.contact-card button {
+align-self: flex-start;
+padding: 13px 25px;
+border: none;
+border-radius: 4px;
+background: #284c7d;
+color: white;
+font: inherit;
+cursor: pointer;
+}
+
+.contact-card button:hover {
+background: #1b365b;
+}
+
+@media screen and (max-width: 700px) {
+.contact-page {
+margin: 45px auto;
+padding: 0 20px;
+}
+
+.contact-page h1 {
+font-size: 42px;
+}
+
+.contact-columns {
+grid-template-columns: 1fr;
+}
+
+.contact-card {
+padding: 25px;
+}
+}
+
+.fun-facts {
+max-width: 1000px;
+margin: 30px auto 70px;
+padding: 0 25px;
+}
+
+.fun-facts h2 {
+text-align: center;
+font-size: 30px;
+color: #284c7d;
+margin-bottom: 30px;
+}
+
+.facts-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+}
+
+.fact-card {
+background: #eeeeee;
+padding: 30px;
+border-radius: 8px;
+}
+
+.fact-card h3 {
+color: #284c7d;
+font-size: 22px;
+margin: 0 0 15px;
+}
+
+.fact-card p {
+margin: 0;
+line-height: 1.7;
+}
+
+@media screen and (max-width: 700px) {
+.facts-grid {
+grid-template-columns: 1fr;
+}
+}
+
+/* Miðjar fyrirsögnina og kassana */
+.fun-facts {
+box-sizing: border-box;
+width: 100%;
+max-width: 900px;
+margin: 40px auto 70px;
+padding: 0 25px;
+grid-column: 1 / -1;
+}
+
+.fun-facts h2 {
+text-align: center;
+}
+
+.facts-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 25px;
+}
+
+/* Lína milli textans og myndarinnar */
+.hero-text {
+border-right: 1px solid #cccccc;
+padding-right: 45px;
+}
+
+/* Símaútlit */
+@media screen and (max-width: 700px) {
+.facts-grid {
+grid-template-columns: 1fr;
+}
+
+.hero-text {
+border-right: none;
+padding-right: 0;
+}
+}
+
+/* Political priorities: mobile layout */
+.political-priorities {
+box-sizing: border-box;
+width: 100%;
+max-width: 1000px;
+margin: 60px auto;
+padding: 0 25px;
+}
+
+.political-priorities h2 {
+text-align: center;
+color: #284c7d;
+font-size: 30px;
+}
+
+.priorities-intro {
+max-width: 650px;
+margin: 20px auto 30px;
+text-align: center;
+line-height: 1.7;
+}
+
+.priorities-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 25px;
+}
+
+.priority-card {
+background: #eeeeee;
+padding: 25px;
+border-radius: 8px;
+}
+
+.priority-card h3 {
+color: #284c7d;
+margin: 0 0 15px;
+}
+
+.priority-card p {
+margin: 0;
+line-height: 1.7;
+}
+
+.priorities-source {
+font-size: 12px;
+text-align: center;
+margin-top: 20px;
+}
+
+.priorities-source a {
+color: #284c7d;
+}
+
+/* Three columns on larger screens */
+@media screen and (min-width: 700px) {
+.priorities-grid {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+}
+
+/* Navigation: mobile first */
+nav.site-nav {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 18px;
+padding: 22px 25px;
+background: #182c46;
+}
+
+nav.site-nav a {
+color: white;
+text-decoration: none;
+}
+
+nav.site-nav .site-name {
+font-size: 22px;
+font-weight: 700;
+}
+
+nav.site-nav ul {
+display: flex;
+justify-content: flex-start;
+flex-wrap: wrap;
+gap: 22px;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+nav.site-nav li {
+margin: 0;
+padding: 0;
+}
+
+nav.site-nav ul a {
+font-size: 16px;
+}
+
+nav.site-nav a:hover {
+text-decoration: underline;
+}
+
+/* Name and links beside each other on desktop */
+@media screen and (min-width: 700px) {
+nav.site-nav {
+flex-direction: row;
+align-items: center;
+gap: 55px;
+padding: 25px 40px;
+}
+}
+
+@media screen and (min-width: 700px) {
+nav.site-nav {
+flex-direction: row;
+align-items: center;
+gap: 30px;
+}
+
+nav.site-nav .site-name {
+width: auto;
+flex: 0 0 auto;
+padding-right: 30px;
+border-right: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+nav.site-nav ul {
+width: auto;
+margin: 0;
+gap: 30px;
+}
+}
